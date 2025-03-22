@@ -1,12 +1,159 @@
 <html>
     <head>
+        <title> Wright & Co. Law Offices </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
         <!-- remember to route relative to index.php  -->
         <script type="text/javascript" src="./assets/js/homepage.js"></script>
         <link rel="stylesheet" href="./assets/styles/homepage.css">
     </head>
 
+
     <body>
-        <p>homepage!</p>
+
+    <div class ="header">
+
+        <a href="#" style="color:#8B0000;" >Home</a>
+        <a href="#" style="color:#8B0000;" >About</a>
+        <a href="#" style="color:#8B0000;" >Address</a>
+        <a href="#" style="color:#8B0000;" >Contact</a>
+
+    </div>
+
+    <div class ="logo">
+
+        <p class ="new-font logo">Wright and Co.</p>
+
+    </div>
+
+    <p style="color:#0C06F7;text-align:left">CALL TODAY - AVAILABLE 24/7</p>
+
+
+    <h1><b>Wright and Co. Law Offices</b></h1>
+    <p>
+        <i>Falsely accused of a crime and need a defense attorney to defend you in court? My name is Phoenix Wright and I'm here to help! I have twenty years of experience and I have a solid track record of successfully defending my clients. My team and I will go over your claim with you for FREE, and you won't pay a fee unless I win your case.</i>
+    </p>
+
+    <h2><b>Location and Phone Number</b></h2>
+    <p>
+        The Wright and Co. Law Offices is located in Midtown Manhattan, in proximity to Park Avenue and the Museum of Modern Art. We plan on expanding the law firm and opening more locations in the future to increase accessibility for our clients. If you have any questions, call us at <b>(800) 888-8888</b>.
+    </p>
+
+    <br>
+
+    <div class="image">
+
+        <img width ="350" height ="200" src ="./images/lawyer.png" alt="The best law office in town"/>
+
+    </div>
+
+    <br>
+
+    <h2><b>Contact Form</b></h2>
+
+    <form>
+        <fieldset>
+            <label for="firstname">Enter your first name:</label>
+            <input type="text" id="firstname" firstname="firstname" required />
+            <label for="lastname">Enter your last name:</label>
+            <input type="text" id="lastname" lastname="lastname" required />
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required />
+            <input type="submit" value="Submit" id="submit"/>
+
+        </fieldset>
+    </form>
+
+    <style>
+
+        h1 {
+            text-align: center;
+            margin: -10px;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: -10px;
+            padding: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin: -10px;
+            padding: 20px;
+        }
+
+        .logo {
+            text-align: left;
+            margin: -10px;
+            padding: 20px;
+        }
+
+        .image {
+            text-align: center;
+            margin: -10px;
+            padding: 20px;
+        }
+
+        .header {
+
+            border: 1px black solid;
+            width: 100%;
+            text-align: center;
+            background-color: #7ae00d;
+            display:inline-block;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .smooch-sans-<uniquifier> {
+                          font-family: "Smooch Sans", serif;
+                          font-optical-sizing: auto;
+                          font-weight: <weight>;
+                          font-style: normal;
+                      }
+
+        * {
+            font-family: Verdana;
+        }
+
+        .new-font {
+            font-size: 50px;
+            color: #AA6C39;
+            font-family: Smooch Sans;
+        }
+
+        * {
+            font-family: Verdana;
+        }
+
+        input[type=submit] {
+            color: #ffffff;
+            background-color: #665544;
+            border: none;
+            border-radius: 5px;
+            width: 80px;
+        }
+
+        input#submit:hover {
+            color: #665544;
+            background-color: #efefef;
+        }
+
+        fieldset {
+            text-align: center;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            margin: -10px;
+            padding: 20px;
+        }
+
+    </style>
+
     </body>
+
 </html>
 
