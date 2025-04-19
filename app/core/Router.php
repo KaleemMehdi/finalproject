@@ -27,15 +27,25 @@ class Router {
     }
 
     protected function handleUserRoutes() {
-        if ($this->uriArray[1] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->usersView();
+            $userController->contactsView();
         }
 
-        //give json/API requests a api prefix
-        if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($this->uriArray[1] === 'attorneys' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
-            $userController->getUsers();
+            $userController->attorneysView();
         }
+
+        if ($this->uriArray[1] === 'contacts' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $userController = new UserController();
+            $userController->saveContact();
+        }
+
+        if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'attorneys' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $userController = new UserController();
+            $userController->getAllAttorneys();
+        }
+
     }
 }

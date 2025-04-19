@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title> Wright & Co. Law Offices </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <!-- remember to route relative to index.php  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+
+</head>
+
+<style>
+
+    #error-container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #success-container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .error-text {
+        color: red;
+        font-weight: 500;
+    }
+
+    .success-text {
+        color: green;
+        font-weight: 500;
+    }
+
+</style>
+
+<body>
+
+<div class ="header">
+
+    <a href="/" style="color:#8B0000;" >Home</a>
+    <a href="/attorneys" style="color:#8B0000;" >Attorneys</a>
+    <a href="/contacts" style="color:#8B0000;" >Contact</a>
+
+</div>
+
+<br>
+<br>
+
+<h2><b>Contact Us</b></h2>
+
+<form id="form-id">
+    <fieldset>
+        <label for="firstname">Enter your first name:</label>
+        <input type="text" id="firstname" firstname="firstname" />
+
+        <label for="lastname">Enter your last name:</label>
+        <input type="text" id="lastname" lastname="lastname"  />
+
+        <label for="email">Enter your email:</label>
+        <input type="text" id="email" email="email"  />
+
+        <label for="phonenumber">Enter your phone number:</label>
+        <input type="text" id="phonenumber" phonenumber="phonenumber"  />
+
+        <label for="message">Message:</label>
+        <input type="text" id="message" message="message"  />
+
+        <input type="submit" value="Submit" id="submit"/>
+
+    </fieldset>
+</form>
+
+<br>
+
+<div id="success-container"></div>
+
+
+<div id="error-container"></div>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#form-id').on('submit', function (e) {
+            e.preventDefault();
+
+            $('#error-container').html('');
+            $('#success-container').html('');
+
+            const firstName = $('#firstname').val();
+            const lastName = $('#lastname').val();
+            const email = $('#email').val();
+            const phoneNumber = $('#phonenumber').val();
+            const message = $('#message').val();
+
+            const data = {
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+                message,
+            }
+            $.ajax({
+                url: `http://localhost:8888/contacts`,
+                type: "POST",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+
+                    $('#success-container').html('<div class="success-text">Your contact information has been sent successfully!</div>');
+
+                },
+                error: function (data){
+                    console.log(data.responseJSON)
+
+                    $('#error-container').html('')
+                    for (const property in data.responseJSON) {
+                        $('#error-container').append(` <div class='error-text'>${data.responseJSON[property]}</div>`)
+                    }
+                }
+            });
+        })
+
+    })
+
+
+</script>
+
+</body>
+</html>

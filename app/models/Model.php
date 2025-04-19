@@ -3,12 +3,6 @@
 namespace app\models;
 
 abstract class Model {
-
-    public function findAll() {
-        $query = "select * from $this->table";
-        return $this->query($query);
-    }
-
     private function connect() {
         $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
         $con = new \PDO($string, DBUSER, DBPASS);

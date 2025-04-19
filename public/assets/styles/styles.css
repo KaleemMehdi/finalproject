@@ -1,0 +1,96 @@
+h1 {
+    text-align: center;
+    margin: -10px;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin: -10px;
+    padding: 20px;
+}
+
+a {
+    margin-right: 50px;
+}
+
+p {
+    text-align: center;
+    margin: -10px;
+    padding: 20px;
+}
+
+div.logo p {
+    margin-bottom: -35px;
+}
+
+.logo {
+    text-align: left;
+    margin: -10px;
+    padding: 20px;
+}
+
+.image {
+    text-align: center;
+    margin: -10px;
+    padding: 20px;
+}
+
+.header {
+
+    border: 1px black solid;
+    width: 100%;
+    text-align: center;
+    background-color: #7ae00d;
+    display:inline-block;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.smooch-sans-<uniquifier> {
+                  font-family: "Smooch Sans", serif;
+                  font-optical-sizing: auto;
+                  font-weight: <weight>;
+                  font-style: normal;
+              }
+
+* {
+    font-family: Verdana;
+}
+
+.new-font {
+    font-size: 50px;
+    color: #AA6C39;
+    font-family: Smooch Sans;
+}
+
+* {
+    font-family: Verdana;
+}
+
+input[type=submit] {
+    color: #ffffff;
+    background-color: #665544;
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+}
+
+input#submit:hover {
+    color: #665544;
+    background-color: #efefef;
+}
+
+fieldset {
+    text-align: center;
+    border: 1px solid #dcdcdc;
+    max-width: 200px;
+    border-radius: 10px;
+    margin: -10px auto;
+    padding: 20px;
+}
+
+input {
+    margin-bottom: 15px;
+}

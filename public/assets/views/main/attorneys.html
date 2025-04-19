@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title> Wright & Co. Law Offices </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <!-- remember to route relative to index.php  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+
+</head>
+
+<style>
+    .attorney-container {
+        display: block;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .margin-thirty {
+        margin-top: 30px;
+    }
+
+    .margin-ten {
+        margin-top: 10px;
+    }
+
+</style>
+
+<body>
+
+<div class ="header">
+
+    <a href="/" style="color:#8B0000;" >Home</a>
+    <a href="/attorneys" style="color:#8B0000;" >Attorneys</a>
+    <a href="/contacts" style="color:#8B0000;" >Contact</a>
+
+</div>
+
+<br>
+<br>
+
+<h2><b>Attorneys</b></h2>
+
+<p> The attorneys of Wright and Co. bring years of experience to your legal matter. Our veteran lawyers are actively engaged in cases, and commonly work together to ensure that our clients are given comprehensive coverage for complex transactions and litigation.</p>
+
+<div class="container attorneys-form margin-thirty">
+    <div id="attorneys-container" class="margin-ten"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: `http://localhost:8888/api/attorneys`,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                $('#attorneys-container').html('');
+                $.each(data, function (key, value) {
+                    $('#attorneys-container').append(`
+                        <div class="attorney-container margin-thirty">
+                            <p><strong>Name:</strong> ${value['fullName']}</p>
+                            <p><strong>Email:</strong> ${value['email']}</p>
+                            <p><strong>Phone Number:</strong> ${value['phoneNumber']}</p>
+                            <p><strong>Position:</strong> ${value['position']}</p>
+                        </div>`);
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+
+
+
+</html>
